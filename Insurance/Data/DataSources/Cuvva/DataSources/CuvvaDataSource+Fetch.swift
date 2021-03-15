@@ -10,7 +10,7 @@ import Foundation
 extension CuvvaDataSource {
     // MARK: Properties
     var fetchUrl: URL? {
-        guard let endpoint = configuration?.endpoint(.ingredients) else { return nil }
+        guard let endpoint = configuration?.endpoint(.policies) else { return nil }
         guard let url = URL(string: endpoint) else { return nil }
         return url
     }
