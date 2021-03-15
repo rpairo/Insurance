@@ -10,6 +10,6 @@ import Foundation
 class HomeViewModel: ObservableObject {
     // MARK: Lifecycle
     func onAppear() {
-        
+
     }
 }
