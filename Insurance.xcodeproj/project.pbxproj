@@ -11,6 +11,11 @@
 		C42616D225FEBC1C0097346D /* CuvvaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616D125FEBC1C0097346D /* CuvvaConfiguration.swift */; };
 		C42616D725FEBC6F0097346D /* PolicyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616D625FEBC6F0097346D /* PolicyDTO.swift */; };
 		C42616DF25FED5130097346D /* CuvvaDataSource+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616DE25FED5130097346D /* CuvvaDataSource+Fetch.swift */; };
+		C42616E525FEE3010097346D /* FetchPoliciesUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616E425FEE3010097346D /* FetchPoliciesUseCaseable.swift */; };
+		C42616E925FEE3610097346D /* FetchPoliciesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616E825FEE3610097346D /* FetchPoliciesUseCase.swift */; };
+		C42616EE25FEE3A00097346D /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616ED25FEE3A00097346D /* Policy.swift */; };
+		C42616F125FEE65B0097346D /* VehicleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616F025FEE65B0097346D /* VehicleDTO.swift */; };
+		C42616F425FEEEC10097346D /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616F325FEEEC10097346D /* Vehicle.swift */; };
 		C43A307C25FEB42300EB6302 /* PoliciesRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A307B25FEB42300EB6302 /* PoliciesRepositable.swift */; };
 		C43A307F25FEB46A00EB6302 /* PoliciesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A307E25FEB46A00EB6302 /* PoliciesRepository.swift */; };
 		C43A308225FEB4E100EB6302 /* PoliciesDataSourceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A308125FEB4E100EB6302 /* PoliciesDataSourceable.swift */; };
@@ -26,6 +31,11 @@
 		C42616D125FEBC1C0097346D /* CuvvaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuvvaConfiguration.swift; sourceTree = "<group>"; };
 		C42616D625FEBC6F0097346D /* PolicyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDTO.swift; sourceTree = "<group>"; };
 		C42616DE25FED5130097346D /* CuvvaDataSource+Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CuvvaDataSource+Fetch.swift"; sourceTree = "<group>"; };
+		C42616E425FEE3010097346D /* FetchPoliciesUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPoliciesUseCaseable.swift; sourceTree = "<group>"; };
+		C42616E825FEE3610097346D /* FetchPoliciesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPoliciesUseCase.swift; sourceTree = "<group>"; };
+		C42616ED25FEE3A00097346D /* Policy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policy.swift; sourceTree = "<group>"; };
+		C42616F025FEE65B0097346D /* VehicleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDTO.swift; sourceTree = "<group>"; };
+		C42616F325FEEEC10097346D /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		C43A307B25FEB42300EB6302 /* PoliciesRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliciesRepositable.swift; sourceTree = "<group>"; };
 		C43A307E25FEB46A00EB6302 /* PoliciesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliciesRepository.swift; sourceTree = "<group>"; };
 		C43A308125FEB4E100EB6302 /* PoliciesDataSourceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliciesDataSourceable.swift; sourceTree = "<group>"; };
@@ -62,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				C42616D625FEBC6F0097346D /* PolicyDTO.swift */,
+				C42616F025FEE65B0097346D /* VehicleDTO.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -75,9 +86,35 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
+		C42616E225FEE2D20097346D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C42616E825FEE3610097346D /* FetchPoliciesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C42616E325FEE2D90097346D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C42616E425FEE3010097346D /* FetchPoliciesUseCaseable.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C42616EC25FEE3890097346D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C42616ED25FEE3A00097346D /* Policy.swift */,
+				C42616F325FEEEC10097346D /* Vehicle.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		C43A307625FEB3A100EB6302 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				C42616E325FEE2D90097346D /* UseCases */,
 				C43A307725FEB3AB00EB6302 /* Repositories */,
 			);
 			path = Protocols;
@@ -174,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				C43A307625FEB3A100EB6302 /* Protocols */,
+				C42616EC25FEE3890097346D /* Entities */,
+				C42616E225FEE2D20097346D /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -329,8 +368,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42616E925FEE3610097346D /* FetchPoliciesUseCase.swift in Sources */,
 				C4B1137E25FE7B2E007B74B4 /* HomeView.swift in Sources */,
 				C42616D725FEBC6F0097346D /* PolicyDTO.swift in Sources */,
+				C42616F125FEE65B0097346D /* VehicleDTO.swift in Sources */,
+				C42616F425FEEEC10097346D /* Vehicle.swift in Sources */,
+				C42616E525FEE3010097346D /* FetchPoliciesUseCaseable.swift in Sources */,
 				C4B1137C25FE7B2E007B74B4 /* InsuranceApp.swift in Sources */,
 				C43A307C25FEB42300EB6302 /* PoliciesRepositable.swift in Sources */,
 				C42616D225FEBC1C0097346D /* CuvvaConfiguration.swift in Sources */,
@@ -338,6 +381,7 @@
 				C43A308625FEB56400EB6302 /* CuvvaDataSource.swift in Sources */,
 				C43A307F25FEB46A00EB6302 /* PoliciesRepository.swift in Sources */,
 				C42616DF25FED5130097346D /* CuvvaDataSource+Fetch.swift in Sources */,
+				C42616EE25FEE3A00097346D /* Policy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

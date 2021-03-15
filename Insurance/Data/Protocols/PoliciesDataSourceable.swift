@@ -9,5 +9,5 @@ import Foundation
 
 protocol PoliciesDataSourceable {
     // MARK: Functionality
-    func fetch()
+    func fetch(onComplete: @escaping FetchPoliciesResult)
 }
