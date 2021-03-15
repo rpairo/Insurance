@@ -12,9 +12,12 @@ struct PolicyDTO {
     var type: String
     var timestamp: String
     var id: String
-    var startDate: String
-    var endDate: String
-    var vehicle: VehicleDTO
+    var originalId: String?
+    var startDate: String?
+    var endDate: String?
+    var vehicle: VehicleDTO?
+    var cancellationType: String?
+    var newEndDate: String?
 
     // MARK: Functionality
     func transform() -> Policy {
@@ -24,7 +27,7 @@ struct PolicyDTO {
             id: id,
             startDate: startDate,
             endDate: endDate,
-            vehicle: vehicle.transform()
+            vehicle: vehicle?.transform()
         )
     }
 }
@@ -38,6 +41,9 @@ extension PolicyDTO: Decodable {
         case startDate = "start_date"
         case endDate = "end_date"
         case vehicle
+        case originalId = "original_policy_id"
+        case cancellationType = "cancellation_type"
+        case newEndDate = "new_end_date"
         case payload
     }
 
@@ -49,10 +55,13 @@ extension PolicyDTO: Decodable {
         let payload = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .payload)
         timestamp = try payload.decode(String.self, forKey: .timestamp)
         id = try payload.decode(String.self, forKey: .id)
-        startDate = try payload.decode(String.self, forKey: .startDate)
-        endDate = try payload.decode(String.self, forKey: .endDate)
+        startDate = try? payload.decode(String.self, forKey: .startDate)
+        endDate = try? payload.decode(String.self, forKey: .endDate)
+        originalId = try? payload.decode(String.self, forKey: .originalId)
+        cancellationType = try? payload.decode(String.self, forKey: .cancellationType)
+        newEndDate = try? payload.decode(String.self, forKey: .newEndDate)
 
-        vehicle = try payload.decode(VehicleDTO.self, forKey: .vehicle)
+        vehicle = try? payload.decode(VehicleDTO.self, forKey: .vehicle)
     }
 }
 

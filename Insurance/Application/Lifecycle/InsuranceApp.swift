@@ -11,7 +11,15 @@ import SwiftUI
 struct InsuranceApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView(viewModel: HomeViewModel())
+            HomeView(
+                viewModel: HomeViewModel(
+                    fetchPoliciesUseCase: FetchPoliciesUseCase(
+                        repository: PoliciesRepository(
+                            policiesDataSource: CuvvaDataSource()
+                        )
+                    )
+                )
+            )
         }
     }
 }

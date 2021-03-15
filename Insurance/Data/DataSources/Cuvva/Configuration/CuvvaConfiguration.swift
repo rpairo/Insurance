@@ -8,7 +8,7 @@
 import Foundation
 
 enum Endpoints: String {
-    case ingredients = "Policies"
+    case policies = "Policies"
 }
 
 struct CuvvaConfiguration: Decodable {

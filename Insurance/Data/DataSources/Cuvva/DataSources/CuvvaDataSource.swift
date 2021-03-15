@@ -10,7 +10,7 @@ import Foundation
 struct CuvvaDataSource: PoliciesDataSourceable {
     // MARK: Properties
     var configuration: CuvvaConfiguration? {
-        let file = "RiM"
+        let file = "Cuvva"
         let type = "plist"
 
         guard let path = Bundle.main.url(forResource: file, withExtension: type) else { return nil }
