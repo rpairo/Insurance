@@ -8,5 +8,11 @@
 import Foundation
 
 struct Policy {
-    
+    // MARK: Properties
+    var type: String
+    var timestamp: String
+    var id: String
+    var startDate: String
+    var endDate: String
+    var vehicle: Vehicle
 }
