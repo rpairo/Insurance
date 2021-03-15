@@ -12,7 +12,10 @@ struct Policy {
     var type: String
     var timestamp: String
     var id: String
-    var startDate: String
-    var endDate: String
-    var vehicle: Vehicle
+    var originalId: String?
+    var startDate: String?
+    var endDate: String?
+    var vehicle: Vehicle?
+    var cancellationType: String?
+    var newEndDate: String?
 }

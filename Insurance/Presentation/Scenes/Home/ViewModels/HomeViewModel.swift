@@ -24,7 +24,9 @@ class HomeViewModel: ObservableObject {
         fetchPoliciesUseCase.execute { [weak self] result in
             switch result {
             case .success(let policies):
-                self?.policies = policies
+                DispatchQueue.main.async {
+                    self?.policies = policies
+                }
             case .failure(let error):
                 print("Error: \(error)")
             }
