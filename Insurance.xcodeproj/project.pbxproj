@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42616CF25FEBB890097346D /* Cuvva.plist in Resources */ = {isa = PBXBuildFile; fileRef = C42616CE25FEBB890097346D /* Cuvva.plist */; };
+		C42616D225FEBC1C0097346D /* CuvvaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616D125FEBC1C0097346D /* CuvvaConfiguration.swift */; };
+		C42616D725FEBC6F0097346D /* PolicyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616D625FEBC6F0097346D /* PolicyDTO.swift */; };
+		C42616DF25FED5130097346D /* CuvvaDataSource+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42616DE25FED5130097346D /* CuvvaDataSource+Fetch.swift */; };
+		C43A307C25FEB42300EB6302 /* PoliciesRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A307B25FEB42300EB6302 /* PoliciesRepositable.swift */; };
+		C43A307F25FEB46A00EB6302 /* PoliciesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A307E25FEB46A00EB6302 /* PoliciesRepository.swift */; };
+		C43A308225FEB4E100EB6302 /* PoliciesDataSourceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A308125FEB4E100EB6302 /* PoliciesDataSourceable.swift */; };
+		C43A308625FEB56400EB6302 /* CuvvaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A308525FEB56400EB6302 /* CuvvaDataSource.swift */; };
 		C4B1137C25FE7B2E007B74B4 /* InsuranceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1137B25FE7B2E007B74B4 /* InsuranceApp.swift */; };
 		C4B1137E25FE7B2E007B74B4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1137D25FE7B2E007B74B4 /* HomeView.swift */; };
 		C4B1138025FE7B2E007B74B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B1137F25FE7B2E007B74B4 /* Images.xcassets */; };
@@ -14,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C42616CE25FEBB890097346D /* Cuvva.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Cuvva.plist; sourceTree = "<group>"; };
+		C42616D125FEBC1C0097346D /* CuvvaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuvvaConfiguration.swift; sourceTree = "<group>"; };
+		C42616D625FEBC6F0097346D /* PolicyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDTO.swift; sourceTree = "<group>"; };
+		C42616DE25FED5130097346D /* CuvvaDataSource+Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CuvvaDataSource+Fetch.swift"; sourceTree = "<group>"; };
+		C43A307B25FEB42300EB6302 /* PoliciesRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliciesRepositable.swift; sourceTree = "<group>"; };
+		C43A307E25FEB46A00EB6302 /* PoliciesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliciesRepository.swift; sourceTree = "<group>"; };
+		C43A308125FEB4E100EB6302 /* PoliciesDataSourceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliciesDataSourceable.swift; sourceTree = "<group>"; };
+		C43A308525FEB56400EB6302 /* CuvvaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuvvaDataSource.swift; sourceTree = "<group>"; };
 		C4B1137825FE7B2E007B74B4 /* Insurance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insurance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B1137B25FE7B2E007B74B4 /* InsuranceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceApp.swift; sourceTree = "<group>"; };
 		C4B1137D25FE7B2E007B74B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -33,6 +49,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C42616CD25FEBB760097346D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C42616CE25FEBB890097346D /* Cuvva.plist */,
+				C42616D125FEBC1C0097346D /* CuvvaConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		C42616D425FEBC3D0097346D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C42616D625FEBC6F0097346D /* PolicyDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C42616D525FEBC480097346D /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				C43A308525FEB56400EB6302 /* CuvvaDataSource.swift */,
+				C42616DE25FED5130097346D /* CuvvaDataSource+Fetch.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		C43A307625FEB3A100EB6302 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C43A307725FEB3AB00EB6302 /* Repositories */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C43A307725FEB3AB00EB6302 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C43A307B25FEB42300EB6302 /* PoliciesRepositable.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C43A307825FEB3B300EB6302 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C43A307E25FEB46A00EB6302 /* PoliciesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C43A307925FEB3BA00EB6302 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				C43A308425FEB53F00EB6302 /* Cuvva */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		C43A307A25FEB3C200EB6302 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C43A308125FEB4E100EB6302 /* PoliciesDataSourceable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C43A308425FEB53F00EB6302 /* Cuvva */ = {
+			isa = PBXGroup;
+			children = (
+				C42616CD25FEBB760097346D /* Configuration */,
+				C42616D425FEBC3D0097346D /* Entities */,
+				C42616D525FEBC480097346D /* DataSources */,
+			);
+			path = Cuvva;
+			sourceTree = "<group>";
+		};
 		C4B1136F25FE7B2D007B74B4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +173,7 @@
 		C4B1138D25FE8553007B74B4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C43A307625FEB3A100EB6302 /* Protocols */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -88,6 +181,9 @@
 		C4B1138E25FE8557007B74B4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C43A307A25FEB3C200EB6302 /* Protocols */,
+				C43A307825FEB3B300EB6302 /* Repositories */,
+				C43A307925FEB3BA00EB6302 /* DataSources */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -201,6 +297,7 @@
 			files = (
 				C4B1138025FE7B2E007B74B4 /* Images.xcassets in Resources */,
 				C4B1139725FE85D5007B74B4 /* Colors.xcassets in Resources */,
+				C42616CF25FEBB890097346D /* Cuvva.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B1137E25FE7B2E007B74B4 /* HomeView.swift in Sources */,
+				C42616D725FEBC6F0097346D /* PolicyDTO.swift in Sources */,
 				C4B1137C25FE7B2E007B74B4 /* InsuranceApp.swift in Sources */,
+				C43A307C25FEB42300EB6302 /* PoliciesRepositable.swift in Sources */,
+				C42616D225FEBC1C0097346D /* CuvvaConfiguration.swift in Sources */,
+				C43A308225FEB4E100EB6302 /* PoliciesDataSourceable.swift in Sources */,
+				C43A308625FEB56400EB6302 /* CuvvaDataSource.swift in Sources */,
+				C43A307F25FEB46A00EB6302 /* PoliciesRepository.swift in Sources */,
+				C42616DF25FED5130097346D /* CuvvaDataSource+Fetch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
