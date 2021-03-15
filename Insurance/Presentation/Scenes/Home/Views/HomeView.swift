@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
+    // MARK: Properties
+    @StateObject var viewModel: HomeViewModel
+    
+    // MARK: View
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            
+        }
+        .onAppear() {
+            viewModel.onAppear()
+        }
     }
 }
