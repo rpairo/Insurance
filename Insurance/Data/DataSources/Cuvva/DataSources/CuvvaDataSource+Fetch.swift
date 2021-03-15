@@ -25,20 +25,20 @@ extension CuvvaDataSource {
 
         session.dataTask(with: url) { data, _, error in
             if let error = error {
-                // Error
+                onComplete(.failure(.unkown(error)))
             }
 
             guard let policies = self.decodePolicies(data) else {
-                // Error
+                onComplete(.failure(.decoding))
                 return
             }
 
             guard !policies.isEmpty else {
-                // Error
+                onComplete(.failure(.emptyList))
                 return
             }
 
-            // Succesful
+            onComplete(.success(policies.transform()))
         }
         .resume()
     }
