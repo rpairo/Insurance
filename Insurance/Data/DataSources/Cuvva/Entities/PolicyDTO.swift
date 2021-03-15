@@ -18,7 +18,14 @@ struct PolicyDTO {
 
     // MARK: Functionality
     func transform() -> Policy {
-        Policy()
+        Policy(
+            type: type,
+            timestamp: timestamp,
+            id: id,
+            startDate: startDate,
+            endDate: endDate,
+            vehicle: vehicle.transform()
+        )
     }
 }
 
@@ -49,6 +56,7 @@ extension PolicyDTO: Decodable {
     }
 }
 
+// MARK: Transformation DTO to BO from array
 extension Array where Element == PolicyDTO {
     // MARK: Functionality
     func transform() -> [Policy] {

@@ -15,6 +15,18 @@ struct VehicleDTO {
     var variant: String
     var color: String
     var notes: String
+
+    // MARK: Functionality
+    func transform() -> Vehicle {
+        Vehicle(
+            vrm: vrm,
+            make: make,
+            model: model,
+            variant: variant,
+            color: color,
+            notes: notes
+        )
+    }
 }
 
 extension VehicleDTO: Decodable {
