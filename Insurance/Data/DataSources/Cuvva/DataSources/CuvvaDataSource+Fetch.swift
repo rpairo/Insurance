@@ -16,7 +16,7 @@ extension CuvvaDataSource {
     }
 
     // MARK: Functionality
-    func fetch() {
+    func fetch(onComplete: @escaping FetchPoliciesResult) {
         let session = URLSession(configuration: .default)
         guard let url = fetchUrl else {
             // Error

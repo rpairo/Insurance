@@ -12,7 +12,7 @@ struct PoliciesRepository: PoliciesRepositable {
     var policiesDataSource: PoliciesDataSourceable
 
     // MARK: Functionality
-    func fetch() {
-        policiesDataSource.fetch()
+    func fetch(onComplete: @escaping FetchPoliciesResult) {
+        policiesDataSource.fetch(onComplete: onComplete)
     }
 }

@@ -9,5 +9,5 @@ import Foundation
 
 protocol PoliciesRepositable {
     // MARK: Functionality
-    func fetch()
+    func fetch(onComplete: @escaping FetchPoliciesResult)
 }
