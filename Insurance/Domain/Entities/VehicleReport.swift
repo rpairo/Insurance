@@ -11,13 +11,13 @@ struct VehicleReport: Identifiable {
     // MARK: Properties
     var id: UUID
     var vehicle: Vehicle?
-    var policies: [Policy]
+    var policies: [CreatedPolicy]
 
     // MARK: Use cases
     private var filterActivePolicy: FilterActivePolicyUseCaseable
 
     // MARK: Constructor
-    init(id: UUID, vehicle: Vehicle?, policies: [Policy],
+    init(id: UUID, vehicle: Vehicle?, policies: [CreatedPolicy],
          filterActivePolicy: FilterActivePolicyUseCaseable) {
 
         self.id = id
@@ -27,7 +27,7 @@ struct VehicleReport: Identifiable {
     }
 
     // MARK: Functionality
-    var activePolicy: Policy? {
+    var activePolicy: CreatedPolicy? {
         let result = filterActivePolicy.execute(policies: policies)
         switch result {
         case .success(let policy):

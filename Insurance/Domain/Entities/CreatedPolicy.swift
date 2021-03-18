@@ -13,5 +13,5 @@ struct CreatedPolicy: Identifiable {
     let id: String
     let startDate: String
     let endDate: String
-    let vehicle: VehicleDTO
+    let vehicle: Vehicle
 }

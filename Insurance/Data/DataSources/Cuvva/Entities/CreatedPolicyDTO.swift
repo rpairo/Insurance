@@ -22,7 +22,7 @@ struct CreatedPolicyDTO {
             id: self.id,
             startDate: self.startDate,
             endDate: self.endDate,
-            vehicle: self.vehicle
+            vehicle: self.vehicle.transform()
         )
     }
 }
