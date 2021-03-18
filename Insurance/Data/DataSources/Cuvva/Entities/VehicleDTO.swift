@@ -31,7 +31,7 @@ struct VehicleDTO {
 
 extension VehicleDTO: Decodable {
     // MARK: Keys
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case vrm = "prettyVrm"
         case make
         case model
