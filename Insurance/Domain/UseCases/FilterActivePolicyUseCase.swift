@@ -28,12 +28,7 @@ struct FilterActivePolicyUseCase: FilterActivePolicyUseCaseable {
         let result = checkPolicyStatusUseCase.execute(policy: policy)
         switch result {
         case .success(let status):
-            switch status {
-            case .active:
-                return true
-            case .inactive:
-                return false
-            }
+            return status == .active ? true : false
         case .failure:
             return false
         }
