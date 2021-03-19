@@ -46,7 +46,7 @@ extension CuvvaDataSource {
     func decodePolicies(_ data: Data?) -> [PolicyDTO]? {
         guard let data = data else { return nil }
         let decoder = JSONDecoder()
-        guard let recipes = try? decoder.decode([PolicyDTO].self, from: data) else { return nil }
-        return recipes
+        guard let policies = try? decoder.decode([PolicyDTO].self, from: data) else { return nil }
+        return policies
     }
 }

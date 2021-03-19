@@ -32,14 +32,16 @@ extension CancelledPolicyDTO: Decodable {
         case id = "policy_id"
         case cancellationType = "cancellation_type"
         case newEndDate = "new_end_date"
+        case payload
     }
 
     // MARK: Constructor
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        timestamp = try container.decode(String.self, forKey: .timestamp)
-        id = try container.decode(String.self, forKey: .id)
-        cancellationType = try container.decode(String.self, forKey: .cancellationType)
-        newEndDate = try? container.decode(String.self, forKey: .newEndDate)
+        let payload = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .payload)
+        timestamp = try payload.decode(String.self, forKey: .timestamp)
+        id = try payload.decode(String.self, forKey: .id)
+        cancellationType = try payload.decode(String.self, forKey: .cancellationType)
+        newEndDate = try? payload.decode(String.self, forKey: .newEndDate)
     }
 }

@@ -12,7 +12,7 @@ struct VehicleDTO {
     var vrm: String
     var make: String
     var model: String
-    var variant: String
+    var variant: String?
     var color: String
     var notes: String
 
@@ -46,7 +46,7 @@ extension VehicleDTO: Decodable {
         vrm = try container.decode(String.self, forKey: .vrm)
         make = try container.decode(String.self, forKey: .make)
         model = try container.decode(String.self, forKey: .model)
-        variant = try container.decode(String.self, forKey: .variant)
+        variant = try? container.decode(String.self, forKey: .variant)
         color = try container.decode(String.self, forKey: .color)
         notes = try container.decode(String.self, forKey: .notes)
     }

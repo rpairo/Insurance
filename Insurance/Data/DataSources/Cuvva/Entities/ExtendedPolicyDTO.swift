@@ -35,15 +35,17 @@ extension ExtendedPolicyDTO: Decodable {
         case originalPolicyId = "original_policy_id"
         case startDate = "start_date"
         case endDate = "end_date"
+        case payload
     }
 
     // MARK: Constructor
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        timestamp = try container.decode(String.self, forKey: .timestamp)
-        id = try container.decode(String.self, forKey: .id)
-        originalPolicyId = try container.decode(String.self, forKey: .originalPolicyId)
-        startDate = try container.decode(String.self, forKey: .startDate)
-        endDate = try container.decode(String.self, forKey: .endDate)
+        let payload = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .payload)
+        timestamp = try payload.decode(String.self, forKey: .timestamp)
+        id = try payload.decode(String.self, forKey: .id)
+        originalPolicyId = try payload.decode(String.self, forKey: .originalPolicyId)
+        startDate = try payload.decode(String.self, forKey: .startDate)
+        endDate = try payload.decode(String.self, forKey: .endDate)
     }
 }
