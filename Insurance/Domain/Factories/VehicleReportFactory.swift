@@ -23,7 +23,7 @@ struct VehicleReportFactory: VehicleReportFactorable {
 
     private static func bindExtentions() {
         extendedPolicies.forEach { policy in
-            if let index = createdPolicies.firstIndex(where: { $0.id == policy.id }) {
+            if let index = createdPolicies.firstIndex(where: { $0.id == policy.originalPolicyId }) {
                 createdPolicies[index].extended = policy
             }
         }
