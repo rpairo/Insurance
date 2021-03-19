@@ -9,5 +9,5 @@ import Foundation
 
 protocol VehicleReportFactorable {
     // MARK: Functionality
-    static func make(for vehicle: Vehicle?, with policies: [CreatedPolicy]) -> VehicleReport
+    static func make(with policies: [Policy]) -> [VehicleReport]
 }

@@ -14,4 +14,6 @@ struct CreatedPolicy: Identifiable {
     let startDate: String
     let endDate: String
     let vehicle: Vehicle
+    var extended: ExtendedPolicy?
+    var cancelled: CancelledPolicy?
 }

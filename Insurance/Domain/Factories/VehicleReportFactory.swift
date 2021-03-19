@@ -7,14 +7,57 @@
 
 import Foundation
 
-enum VehicleReportFactory: VehicleReportFactorable {
+struct VehicleReportFactory: VehicleReportFactorable {
+    // MARK: Properties
+    private static var createdPolicies = [CreatedPolicy]()
+    private static var extendedPolicies = [ExtendedPolicy]()
+    private static var cancelledPolicies = [CancelledPolicy]()
+
     // MARK: Funcionality
-    static func make(for vehicle: Vehicle?, with policies: [CreatedPolicy]) -> VehicleReport {
-        VehicleReport(
-            id: UUID(),
-            vehicle: vehicle,
-            policies: policies,
-            filterActivePolicy: Injector.shared.resolve()
-        )
+    static func make(with policies: [Policy]) -> [VehicleReport] {
+        classify(from: policies)
+        bindExtentions()
+        bindCancelleds()
+        return transform(policies: createdPolicies)
+    }
+
+    private static func bindExtentions() {
+        extendedPolicies.forEach { policy in
+            if let index = createdPolicies.firstIndex(where: { $0.id == policy.id }) {
+                createdPolicies[index].extended = policy
+            }
+        }
+    }
+
+    private static func bindCancelleds() {
+        cancelledPolicies.forEach { policy in
+            if let index = createdPolicies.firstIndex(where: { $0.id == policy.id }) {
+                createdPolicies[index].cancelled = policy
+            }
+        }
+    }
+
+    private static func classify(from policies: [Policy]) {
+        policies.forEach { policy in
+            switch policy {
+            case .created(let policy):
+                createdPolicies.append(policy)
+            case .extended(let policy):
+                extendedPolicies.append(policy)
+            case .cancelled(let policy):
+                cancelledPolicies.append(policy)
+            }
+        }
+    }
+
+    private static func transform(policies: [CreatedPolicy]) -> [VehicleReport] {
+        Dictionary(grouping: createdPolicies, by: { $0.vehicle }).map {
+            VehicleReport(
+                id: UUID(),
+                vehicle: $0.key,
+                policies: $0.value,
+                filterActivePolicy: Injector.shared.resolve()
+            )
+        }
     }
 }

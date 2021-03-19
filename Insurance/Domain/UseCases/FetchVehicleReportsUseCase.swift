@@ -24,28 +24,7 @@ struct FetchVehicleReportsUseCase: FetchVehicleReportsUseCaseable {
     }
 
     func transform(_ policies: [Policy]) -> [VehicleReport] {
-        var createdPolicies = [CreatedPolicy]()
-        var extendedPolicies = [ExtendedPolicy]()
-        var cancelledPolicies = [CancelledPolicy]()
-
-        policies.forEach { policy in
-            switch policy {
-            case .created(let policy):
-                createdPolicies.append(policy)
-            case .extended(let policy):
-                extendedPolicies.append(policy)
-            case .cancelled(let policy):
-                cancelledPolicies.append(policy)
-            }
-        }
-
-        let reports = Dictionary(grouping: createdPolicies, by: { $0.vehicle }).filter {
-            $0.key != nil
-        }.map {
-            VehicleReportFactory.make(for: $0.key, with: $0.value)
-        }
-
-        return reports
+        VehicleReportFactory.make(with: policies)
     }
 
     func transform(_ error: FetchPoliciesError) -> FetchVehicleReportsError {
