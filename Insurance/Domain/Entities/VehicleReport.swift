@@ -10,7 +10,7 @@ import Foundation
 struct VehicleReport: Identifiable {
     // MARK: Properties
     var id: UUID
-    var vehicle: Vehicle?
+    var vehicle: Vehicle
     var policies: [CreatedPolicy]
 
     var hasActivePolicy: CreatedPolicy? {
@@ -27,7 +27,7 @@ struct VehicleReport: Identifiable {
     private var filterActivePolicy: FilterActivePolicyUseCaseable
 
     // MARK: Constructor
-    init(id: UUID, vehicle: Vehicle?, policies: [CreatedPolicy],
+    init(id: UUID, vehicle: Vehicle, policies: [CreatedPolicy],
          filterActivePolicy: FilterActivePolicyUseCaseable) {
 
         self.id = id

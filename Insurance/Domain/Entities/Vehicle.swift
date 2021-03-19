@@ -9,10 +9,10 @@ import Foundation
 
 struct Vehicle: Hashable {
     // MARK: Properties
-    var vrm: String?
-    var make: String?
-    var model: String?
+    var vrm: String
+    var make: String
+    var model: String
     var variant: String?
-    var color: String?
-    var notes: String?
+    var color: String
+    var notes: String
 }
