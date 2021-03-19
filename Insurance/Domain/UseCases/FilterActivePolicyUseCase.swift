@@ -24,7 +24,7 @@ struct FilterActivePolicyUseCase: FilterActivePolicyUseCaseable {
         return .success(policy)
     }
 
-    func checkPolicyStatus(_ policy: CreatedPolicy) -> Bool {
+    private func checkPolicyStatus(_ policy: CreatedPolicy) -> Bool {
         let result = checkPolicyStatusUseCase.execute(policy: policy)
         switch result {
         case .success(let status):

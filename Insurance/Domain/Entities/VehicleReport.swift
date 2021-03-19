@@ -13,6 +13,16 @@ struct VehicleReport: Identifiable {
     var vehicle: Vehicle?
     var policies: [CreatedPolicy]
 
+    var hasActivePolicy: CreatedPolicy? {
+        let result = filterActivePolicy.execute(policies: policies)
+        switch result {
+        case .success(let policy):
+            return policy
+        case .failure:
+            return nil
+        }
+    }
+
     // MARK: Use cases
     private var filterActivePolicy: FilterActivePolicyUseCaseable
 
@@ -24,16 +34,5 @@ struct VehicleReport: Identifiable {
         self.vehicle = vehicle
         self.policies = policies
         self.filterActivePolicy = filterActivePolicy
-    }
-
-    // MARK: Functionality
-    var activePolicy: CreatedPolicy? {
-        let result = filterActivePolicy.execute(policies: policies)
-        switch result {
-        case .success(let policy):
-            return policy
-        case .failure:
-            return nil
-        }
     }
 }

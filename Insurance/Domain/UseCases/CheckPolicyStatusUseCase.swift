@@ -10,18 +10,21 @@ import Foundation
 struct CheckPolicyStatusUseCase: CheckPolicyStatusUseCaseable {
     // MARK: Functionality
     func execute(policy: CreatedPolicy) -> CheckPolicyStatusResult {
-        /*guard let endDateUTC = policy else {
-            return .failure(.date)
-        }
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-
-        guard let endDate = formatter.date(from: endDateUTC) else {
+        guard let date = transform(date: policy.endDate) else {
             return .failure(.format)
         }
 
-        return .success((endDate > Date()) ? .active : .inactive)*/
-        return .failure(.date)
+        return .success((date > Date()) ? .active : .inactive)
+    }
+
+    private func transform(date: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+        guard let date = formatter.date(from: date) else {
+            return nil
+        }
+
+        return date
     }
 }

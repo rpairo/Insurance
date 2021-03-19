@@ -23,11 +23,11 @@ struct FetchVehicleReportsUseCase: FetchVehicleReportsUseCaseable {
         }
     }
 
-    func transform(_ policies: [Policy]) -> [VehicleReport] {
+    private func transform(_ policies: [Policy]) -> [VehicleReport] {
         VehicleReportFactory.make(with: policies)
     }
 
-    func transform(_ error: FetchPoliciesError) -> FetchVehicleReportsError {
+    private func transform(_ error: FetchPoliciesError) -> FetchVehicleReportsError {
         switch error {
         case .emptyList:
             return .emptyList
