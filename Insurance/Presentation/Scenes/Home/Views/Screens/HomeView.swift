@@ -38,12 +38,6 @@ struct HomeView: View {
         .onAppear {
             viewModel.onAppear()
 
-            UITableView.appearance().separatorStyle = .none
-            UITableView.appearance().separatorColor = .clear
-            UITableView.appearance().showsVerticalScrollIndicator = false
-            UITableView.appearance().backgroundColor = UIColor(.bgSurface)
-            UITableViewCell.appearance().backgroundColor = UIColor(.bgSurface)
-
             UINavigationBarAppearance()
                 .setColor(title: .white, background: UIColor(.bgSurfaceHighlight))
         }
