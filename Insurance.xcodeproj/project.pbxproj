@@ -40,6 +40,10 @@
 		C4874EDC2603E0D100EA4498 /* CancelledPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EDB2603E0D100EA4498 /* CancelledPolicy.swift */; };
 		C4874EE0260536A300EA4498 /* ActivePolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EDF260536A300EA4498 /* ActivePolicyView.swift */; };
 		C4874EE326053EA500EA4498 /* Color+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EE226053EA500EA4498 /* Color+CustomColors.swift */; };
+		C4874EF3260592D000EA4498 /* InactivePolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EF2260592D000EA4498 /* InactivePolicyView.swift */; };
+		C4874EF92605975000EA4498 /* ReportTopSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EF82605975000EA4498 /* ReportTopSectionView.swift */; };
+		C4874EFC2605983B00EA4498 /* ReportMiddleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EFB2605983B00EA4498 /* ReportMiddleSectionView.swift */; };
+		C4874EFF2605A00100EA4498 /* ReportBottomSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4874EFE2605A00100EA4498 /* ReportBottomSectionView.swift */; };
 		C4B1137C25FE7B2E007B74B4 /* InsuranceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1137B25FE7B2E007B74B4 /* InsuranceApp.swift */; };
 		C4B1137E25FE7B2E007B74B4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1137D25FE7B2E007B74B4 /* HomeView.swift */; };
 		C4B1138025FE7B2E007B74B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B1137F25FE7B2E007B74B4 /* Images.xcassets */; };
@@ -80,6 +84,10 @@
 		C4874EDB2603E0D100EA4498 /* CancelledPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelledPolicy.swift; sourceTree = "<group>"; };
 		C4874EDF260536A300EA4498 /* ActivePolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePolicyView.swift; sourceTree = "<group>"; };
 		C4874EE226053EA500EA4498 /* Color+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CustomColors.swift"; sourceTree = "<group>"; };
+		C4874EF2260592D000EA4498 /* InactivePolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactivePolicyView.swift; sourceTree = "<group>"; };
+		C4874EF82605975000EA4498 /* ReportTopSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTopSectionView.swift; sourceTree = "<group>"; };
+		C4874EFB2605983B00EA4498 /* ReportMiddleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMiddleSectionView.swift; sourceTree = "<group>"; };
+		C4874EFE2605A00100EA4498 /* ReportBottomSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBottomSectionView.swift; sourceTree = "<group>"; };
 		C4B1137825FE7B2E007B74B4 /* Insurance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insurance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B1137B25FE7B2E007B74B4 /* InsuranceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceApp.swift; sourceTree = "<group>"; };
 		C4B1137D25FE7B2E007B74B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -265,6 +273,26 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		C4874EF52605970B00EA4498 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C4B1137D25FE7B2E007B74B4 /* HomeView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C4874EF62605971400EA4498 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C4874EDF260536A300EA4498 /* ActivePolicyView.swift */,
+				C4874EF2260592D000EA4498 /* InactivePolicyView.swift */,
+				C4874EF82605975000EA4498 /* ReportTopSectionView.swift */,
+				C4874EFB2605983B00EA4498 /* ReportMiddleSectionView.swift */,
+				C4874EFE2605A00100EA4498 /* ReportBottomSectionView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C4B1136F25FE7B2D007B74B4 = {
 			isa = PBXGroup;
 			children = (
@@ -378,8 +406,8 @@
 		C4B1139B25FE85F8007B74B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C4B1137D25FE7B2E007B74B4 /* HomeView.swift */,
-				C4874EDF260536A300EA4498 /* ActivePolicyView.swift */,
+				C4874EF52605970B00EA4498 /* Screens */,
+				C4874EF62605971400EA4498 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,6 +509,7 @@
 				C42616E925FEE3610097346D /* FetchPoliciesUseCase.swift in Sources */,
 				C4874EE0260536A300EA4498 /* ActivePolicyView.swift in Sources */,
 				C4B1137E25FE7B2E007B74B4 /* HomeView.swift in Sources */,
+				C4874EFF2605A00100EA4498 /* ReportBottomSectionView.swift in Sources */,
 				C42616D725FEBC6F0097346D /* PolicyDTO.swift in Sources */,
 				C4488CDC26004B6400ACEADF /* FetchVehicleReportsUseCaseable.swift in Sources */,
 				C42616F125FEE65B0097346D /* VehicleDTO.swift in Sources */,
@@ -489,6 +518,7 @@
 				C4B1137C25FE7B2E007B74B4 /* InsuranceApp.swift in Sources */,
 				C43A307C25FEB42300EB6302 /* PoliciesRepositable.swift in Sources */,
 				C4874ECD2603946D00EA4498 /* CreatedPolicyDTO.swift in Sources */,
+				C4874EF3260592D000EA4498 /* InactivePolicyView.swift in Sources */,
 				C42616D225FEBC1C0097346D /* CuvvaConfiguration.swift in Sources */,
 				C478D30E260001F80039C13E /* CheckPolicyStatusUseCase.swift in Sources */,
 				C43A308225FEB4E100EB6302 /* PoliciesDataSourceable.swift in Sources */,
@@ -507,7 +537,9 @@
 				C478D319260016770039C13E /* FilterActivePolicyUseCase.swift in Sources */,
 				C4874EDC2603E0D100EA4498 /* CancelledPolicy.swift in Sources */,
 				C42616FA25FEF49A0097346D /* HomeViewModel.swift in Sources */,
+				C4874EF92605975000EA4498 /* ReportTopSectionView.swift in Sources */,
 				C42616EE25FEE3A00097346D /* Policy.swift in Sources */,
+				C4874EFC2605983B00EA4498 /* ReportMiddleSectionView.swift in Sources */,
 				C478D30A25FFF8CC0039C13E /* CheckPolicyStatusUseCaseable.swift in Sources */,
 				C4488CE126004C8100ACEADF /* FetchVehicleReportsUseCase.swift in Sources */,
 			);
@@ -641,7 +673,7 @@
 				DEVELOPMENT_TEAM = W2HFS492D7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Insurance/Application/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -662,7 +694,7 @@
 				DEVELOPMENT_TEAM = W2HFS492D7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Insurance/Application/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
