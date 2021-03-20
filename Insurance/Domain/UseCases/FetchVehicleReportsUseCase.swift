@@ -24,7 +24,9 @@ struct FetchVehicleReportsUseCase: FetchVehicleReportsUseCaseable {
     }
 
     private func transform(_ policies: [Policy]) -> [VehicleReport] {
-        VehicleReportFactory.make(with: policies)
+        VehicleReportFactory.make(with: policies).sorted {
+            $0.vehicle.vrm < $1.vehicle.vrm
+        }
     }
 
     private func transform(_ error: FetchPoliciesError) -> FetchVehicleReportsError {
