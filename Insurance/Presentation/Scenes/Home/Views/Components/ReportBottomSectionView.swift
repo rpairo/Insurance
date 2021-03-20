@@ -18,5 +18,6 @@ struct ReportBottomSectionView: View {
             .font(.system(size: 15))
             .fontWeight(report.hasActivePolicy != nil ? .bold : .regular)
             .multilineTextAlignment(.leading)
+            .frame(minWidth: 0, maxWidth: .infinity)
     }
 }
