@@ -141,9 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				C478D30D260001F80039C13E /* CheckPolicyStatusUseCase.swift */,
-				C478D318260016770039C13E /* FilterActivePolicyUseCase.swift */,
 				C42616E825FEE3610097346D /* FetchPoliciesUseCase.swift */,
 				C4488CE026004C8100ACEADF /* FetchVehicleReportsUseCase.swift */,
+				C478D318260016770039C13E /* FilterActivePolicyUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				C478D30925FFF8CC0039C13E /* CheckPolicyStatusUseCaseable.swift */,
-				C478D3142600156A0039C13E /* FilterActivePolicyUseCaseable.swift */,
 				C42616E425FEE3010097346D /* FetchPoliciesUseCaseable.swift */,
 				C4488CDB26004B6400ACEADF /* FetchVehicleReportsUseCaseable.swift */,
+				C478D3142600156A0039C13E /* FilterActivePolicyUseCaseable.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -162,12 +162,12 @@
 		C42616EC25FEE3890097346D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C4874EDB2603E0D100EA4498 /* CancelledPolicy.swift */,
+				C4874ED52603DFB200EA4498 /* CreatedPolicy.swift */,
+				C4874ED82603E09300EA4498 /* ExtendedPolicy.swift */,
 				C42616ED25FEE3A00097346D /* Policy.swift */,
 				C42616F325FEEEC10097346D /* Vehicle.swift */,
 				C478D31B26002C280039C13E /* VehicleReport.swift */,
-				C4874ED52603DFB200EA4498 /* CreatedPolicy.swift */,
-				C4874ED82603E09300EA4498 /* ExtendedPolicy.swift */,
-				C4874EDB2603E0D100EA4498 /* CancelledPolicy.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -232,6 +232,15 @@
 			path = Cuvva;
 			sourceTree = "<group>";
 		};
+		C46E359826067224000E2C4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4874EDF260536A300EA4498 /* ActivePolicyView.swift */,
+				C4874EF2260592D000EA4498 /* InactivePolicyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C478D30325FFE5930039C13E /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +252,8 @@
 		C478D30425FFE59B0039C13E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C478D30525FFE5C60039C13E /* UINavigationBarAppearance+SetColor.swift */,
 				C4874EE226053EA500EA4498 /* Color+CustomColors.swift */,
+				C478D30525FFE5C60039C13E /* UINavigationBarAppearance+SetColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,11 +293,9 @@
 		C4874EF62605971400EA4498 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C4874EDF260536A300EA4498 /* ActivePolicyView.swift */,
-				C4874EF2260592D000EA4498 /* InactivePolicyView.swift */,
-				C4874EF82605975000EA4498 /* ReportTopSectionView.swift */,
-				C4874EFB2605983B00EA4498 /* ReportMiddleSectionView.swift */,
 				C4874EFE2605A00100EA4498 /* ReportBottomSectionView.swift */,
+				C4874EFB2605983B00EA4498 /* ReportMiddleSectionView.swift */,
+				C4874EF82605975000EA4498 /* ReportTopSectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -380,8 +387,8 @@
 		C4B1139525FE85C1007B74B4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C4B1137F25FE7B2E007B74B4 /* Images.xcassets */,
 				C4B1139625FE85D5007B74B4 /* Colors.xcassets */,
+				C4B1137F25FE7B2E007B74B4 /* Images.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -407,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				C4874EF52605970B00EA4498 /* Screens */,
+				C46E359826067224000E2C4C /* Views */,
 				C4874EF62605971400EA4498 /* Components */,
 			);
 			path = Views;
