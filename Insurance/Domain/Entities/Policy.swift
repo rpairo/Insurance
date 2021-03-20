@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct Policy {
-    // MARK: Properties
-    var type: String
-    var timestamp: String
-    var id: String
-    var originalId: String?
-    var startDate: String?
-    var endDate: String?
-    var vehicle: Vehicle?
-    var cancellationType: String?
-    var newEndDate: String?
+enum Policy {
+    // MARK: Cases
+    case created(CreatedPolicy)
+    case extended(ExtendedPolicy)
+    case cancelled(CancelledPolicy)
 }

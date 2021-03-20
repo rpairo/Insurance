@@ -13,11 +13,8 @@ struct InsuranceApp: App {
         WindowGroup {
             HomeView(
                 viewModel: HomeViewModel(
-                    fetchPoliciesUseCase: FetchPoliciesUseCase(
-                        repository: PoliciesRepository(
-                            policiesDataSource: CuvvaDataSource()
-                        )
-                    )
+                    fetchVehicleReports: Injector.shared.resolve(),
+                    fetchActivePolicies: Injector.shared.resolve()
                 )
             )
         }
