@@ -23,6 +23,9 @@
 		C43A308625FEB56400EB6302 /* CuvvaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A308525FEB56400EB6302 /* CuvvaDataSource.swift */; };
 		C4488CDC26004B6400ACEADF /* FetchVehicleReportsUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4488CDB26004B6400ACEADF /* FetchVehicleReportsUseCaseable.swift */; };
 		C4488CE126004C8100ACEADF /* FetchVehicleReportsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4488CE026004C8100ACEADF /* FetchVehicleReportsUseCase.swift */; };
+		C46E35A0260675D6000E2C4C /* ActivePolicyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E359F260675D6000E2C4C /* ActivePolicyDetailView.swift */; };
+		C46E35A4260675F3000E2C4C /* ActivePolicyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E35A3260675F3000E2C4C /* ActivePolicyDetailViewModel.swift */; };
+		C46E35A72606BF4C000E2C4C /* View+NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E35A62606BF4C000E2C4C /* View+NavigationBarColor.swift */; };
 		C478D30625FFE5C60039C13E /* UINavigationBarAppearance+SetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478D30525FFE5C60039C13E /* UINavigationBarAppearance+SetColor.swift */; };
 		C478D30A25FFF8CC0039C13E /* CheckPolicyStatusUseCaseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478D30925FFF8CC0039C13E /* CheckPolicyStatusUseCaseable.swift */; };
 		C478D30E260001F80039C13E /* CheckPolicyStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478D30D260001F80039C13E /* CheckPolicyStatusUseCase.swift */; };
@@ -67,6 +70,9 @@
 		C43A308525FEB56400EB6302 /* CuvvaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuvvaDataSource.swift; sourceTree = "<group>"; };
 		C4488CDB26004B6400ACEADF /* FetchVehicleReportsUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVehicleReportsUseCaseable.swift; sourceTree = "<group>"; };
 		C4488CE026004C8100ACEADF /* FetchVehicleReportsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVehicleReportsUseCase.swift; sourceTree = "<group>"; };
+		C46E359F260675D6000E2C4C /* ActivePolicyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePolicyDetailView.swift; sourceTree = "<group>"; };
+		C46E35A3260675F3000E2C4C /* ActivePolicyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePolicyDetailViewModel.swift; sourceTree = "<group>"; };
+		C46E35A62606BF4C000E2C4C /* View+NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+NavigationBarColor.swift"; sourceTree = "<group>"; };
 		C478D30525FFE5C60039C13E /* UINavigationBarAppearance+SetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBarAppearance+SetColor.swift"; sourceTree = "<group>"; };
 		C478D30925FFF8CC0039C13E /* CheckPolicyStatusUseCaseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPolicyStatusUseCaseable.swift; sourceTree = "<group>"; };
 		C478D30D260001F80039C13E /* CheckPolicyStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPolicyStatusUseCase.swift; sourceTree = "<group>"; };
@@ -241,6 +247,39 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C46E359A26067557000E2C4C /* ActivePolicyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C46E359C26067589000E2C4C /* ViewModels */,
+				C46E359D2606758E000E2C4C /* Views */,
+			);
+			path = ActivePolicyDetail;
+			sourceTree = "<group>";
+		};
+		C46E359C26067589000E2C4C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C46E35A3260675F3000E2C4C /* ActivePolicyDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C46E359D2606758E000E2C4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C46E359E2606759C000E2C4C /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C46E359E2606759C000E2C4C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C46E359F260675D6000E2C4C /* ActivePolicyDetailView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		C478D30325FFE5930039C13E /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +293,7 @@
 			children = (
 				C4874EE226053EA500EA4498 /* Color+CustomColors.swift */,
 				C478D30525FFE5C60039C13E /* UINavigationBarAppearance+SetColor.swift */,
+				C46E35A62606BF4C000E2C4C /* View+NavigationBarColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,6 +436,7 @@
 		C4B1139925FE85EC007B74B4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C46E359A26067557000E2C4C /* ActivePolicyDetail */,
 				C4B1139A25FE85F2007B74B4 /* Home */,
 			);
 			path = Scenes;
@@ -515,6 +556,7 @@
 				C4874ED92603E09300EA4498 /* ExtendedPolicy.swift in Sources */,
 				C4874EA92602856100EA4498 /* VehicleReportFactory.swift in Sources */,
 				C42616E925FEE3610097346D /* FetchPoliciesUseCase.swift in Sources */,
+				C46E35A72606BF4C000E2C4C /* View+NavigationBarColor.swift in Sources */,
 				C4874EE0260536A300EA4498 /* ActivePolicyView.swift in Sources */,
 				C4B1137E25FE7B2E007B74B4 /* HomeView.swift in Sources */,
 				C4874EFF2605A00100EA4498 /* ReportBottomSectionView.swift in Sources */,
@@ -533,6 +575,7 @@
 				C4874ED0260394A800EA4498 /* ExtendedPolicyDTO.swift in Sources */,
 				C478D31C26002C280039C13E /* VehicleReport.swift in Sources */,
 				C478D3152600156A0039C13E /* FilterActivePolicyUseCaseable.swift in Sources */,
+				C46E35A4260675F3000E2C4C /* ActivePolicyDetailViewModel.swift in Sources */,
 				C43A308625FEB56400EB6302 /* CuvvaDataSource.swift in Sources */,
 				C43A307F25FEB46A00EB6302 /* PoliciesRepository.swift in Sources */,
 				C4874EC92602E7AD00EA4498 /* Injector.swift in Sources */,
@@ -548,6 +591,7 @@
 				C4874EF92605975000EA4498 /* ReportTopSectionView.swift in Sources */,
 				C42616EE25FEE3A00097346D /* Policy.swift in Sources */,
 				C4874EFC2605983B00EA4498 /* ReportMiddleSectionView.swift in Sources */,
+				C46E35A0260675D6000E2C4C /* ActivePolicyDetailView.swift in Sources */,
 				C478D30A25FFF8CC0039C13E /* CheckPolicyStatusUseCaseable.swift in Sources */,
 				C4488CE126004C8100ACEADF /* FetchVehicleReportsUseCase.swift in Sources */,
 			);
