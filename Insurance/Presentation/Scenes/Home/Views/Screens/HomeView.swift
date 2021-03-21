@@ -18,8 +18,10 @@ struct HomeView: View {
                 LazyVStack(spacing: 10) {
                     Section(header: PoliciesSection(text: "Active policies")) {
                         ForEach(viewModel.activeReports) { report in
-                            ActivePolicyView(report: report)
-                                .padding(.horizontal)
+                            NavigationLink(destination: ActivePolicyDetailView(viewModel: ActivePolicyDetailViewModel())) {
+                                ActivePolicyView(report: report)
+                                    .padding(.horizontal)
+                            }
                         }
                     }
 
@@ -34,12 +36,11 @@ struct HomeView: View {
             .background(Color.bgSurface)
             .ignoresSafeArea(.all, edges: .bottom)
             .navigationTitle("Home screen")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationBar(background: .bgSurfaceHighlight, title: .textWhite)
         .onAppear {
             viewModel.onAppear()
-
-            UINavigationBarAppearance()
-                .setColor(title: .white, background: UIColor(.bgSurfaceHighlight))
         }
     }
 }
