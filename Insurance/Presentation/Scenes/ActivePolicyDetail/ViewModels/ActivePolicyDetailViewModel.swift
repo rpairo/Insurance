@@ -8,5 +8,11 @@
 import Foundation
 
 class ActivePolicyDetailViewModel: ObservableObject {
+    // MARK: Properties
+    @Published var report: VehicleReport
 
+    // MARK: Constructor
+    init(report: VehicleReport) {
+        self.report = report
+    }
 }

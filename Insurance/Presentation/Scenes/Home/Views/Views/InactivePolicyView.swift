@@ -18,7 +18,7 @@ struct InactivePolicyView: View {
             middleSection
             bottomSection
         }
-        .background(Color.white)
+        .background(Color.bgMain)
         .cornerRadius(20)
         .overlay(
             RoundedRectangle(cornerRadius: 20)

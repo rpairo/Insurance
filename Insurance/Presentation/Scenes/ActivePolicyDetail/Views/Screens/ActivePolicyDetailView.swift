@@ -60,41 +60,86 @@ struct ActivePolicyDetailView: View {
             }
             .background(Color.bgSurfaceHighlight)
 
-            VStack(alignment: .leading) {
-                Text("Active policy")
-                    .foregroundColor(.textNormal)
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding()
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    Text("Active policy")
+                        .foregroundColor(.black)
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
 
-                Text("Time remaining")
-                    .foregroundColor(.textMinor)
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .padding(.horizontal)
+                    Text("Time remaining")
+                        .foregroundColor(.textMinor)
+                        .font(.system(size: 16))
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
 
-                Text("46 mins")
-                    .foregroundColor(.textHighlight)
-                    .font(.system(size: 22))
-                    .fontWeight(.bold)
-                    .padding(.horizontal)
+                    Text("46 mins")
+                        .foregroundColor(.textHighlight)
+                        .font(.system(size: 22))
+                        .fontWeight(.bold)
+                        .padding([.horizontal, .bottom])
+                }
+                .background(Color.bgMain)
+                .cornerRadius(20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.separator, lineWidth: 1)
+                )
+                .padding()
+
+                if let report = viewModel.report {
+                    Section(header: Text("Previous policies")) {
+                        LazyVStack {
+                            ForEach(report.policies) { policy in
+                                VStack(alignment: .leading) {
+                                    Text("Policy")
+                                        .foregroundColor(.textHighlight)
+                                        .font(.system(size: 16))
+                                        .fontWeight(.medium)
+                                    Text(policy.startDate)
+                                }
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(Color.white)
+
+                                Divider()
+                                    .background(Color.separator)
+                            }
+                        }
+                    }
+                }
+                Spacer()
+            }}
+            .onAppear {
+
             }
-            .background(Color.bgMain)
-            .padding()
-
-            Spacer()
-        }
-        .onAppear {
-
-        }
-        .background(Color.bgSurface)
-        .ignoresSafeArea(.all, edges: .bottom)
+            .background(Color.bgSurface)
+            .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 
 struct ActivePolicyDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivePolicyDetailView(viewModel: ActivePolicyDetailViewModel())
+        ActivePolicyDetailView(
+            viewModel: ActivePolicyDetailViewModel(
+                report: VehicleReport(
+                    id: UUID(),
+                    vehicle: Vehicle(
+                        vrm: "",
+                        make: "",
+                        model: "",
+                        variant: "",
+                        color: "",
+                        notes: ""
+                    ),
+                    policies: [CreatedPolicy](),
+                    filterActivePolicy: FilterActivePolicyUseCase(
+                        checkPolicyStatusUseCase: CheckPolicyStatusUseCase()
+                    )
+                )
+            )
+        )
     }
 }

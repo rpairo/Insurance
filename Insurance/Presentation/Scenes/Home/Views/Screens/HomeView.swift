@@ -18,7 +18,7 @@ struct HomeView: View {
                 LazyVStack(spacing: 10) {
                     Section(header: PoliciesSection(text: "Active policies")) {
                         ForEach(viewModel.activeReports) { report in
-                            NavigationLink(destination: ActivePolicyDetailView(viewModel: ActivePolicyDetailViewModel())) {
+                            NavigationLink(destination: ActivePolicyDetailView(viewModel: ActivePolicyDetailViewModel(report: report))) {
                                 ActivePolicyView(report: report)
                                     .padding(.horizontal)
                             }
