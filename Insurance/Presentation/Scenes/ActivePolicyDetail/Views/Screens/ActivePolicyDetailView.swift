@@ -87,18 +87,60 @@ struct ActivePolicyDetailView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.separator, lineWidth: 1)
                 )
-                .padding()
+                .padding(.vertical, 30)
+                .padding(.horizontal)
 
                 if let report = viewModel.report {
-                    Section(header: Text("Previous policies")) {
-                        LazyVStack {
+                    Section(header: section) {
+                        LazyVStack(spacing: 0) {
                             ForEach(report.policies) { policy in
                                 VStack(alignment: .leading) {
-                                    Text("Policy")
+                                    Text("Policy:")
                                         .foregroundColor(.textHighlight)
                                         .font(.system(size: 16))
-                                        .fontWeight(.medium)
-                                    Text(policy.startDate)
+                                        .fontWeight(.bold)
+
+                                    HStack {
+                                        Text("Duration")
+                                            .foregroundColor(.textMinor)
+                                            .font(.system(size: 16))
+                                            .fontWeight(.medium)
+
+                                        Spacer()
+
+                                        Text("1 hour")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 16))
+                                            .fontWeight(.medium)
+                                    }
+
+                                    HStack {
+                                        Text("Start")
+                                            .foregroundColor(.textMinor)
+                                            .font(.system(size: 16))
+                                            .fontWeight(.medium)
+
+                                        Spacer()
+
+                                        Text(policy.startDate)
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 16))
+                                            .fontWeight(.medium)
+                                    }
+
+                                    HStack {
+                                        Text("End")
+                                            .foregroundColor(.textMinor)
+                                            .font(.system(size: 16))
+                                            .fontWeight(.medium)
+
+                                        Spacer()
+
+                                        Text(policy.startDate)
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 16))
+                                            .fontWeight(.medium)
+                                    }
                                 }
                                 .padding()
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -106,6 +148,7 @@ struct ActivePolicyDetailView: View {
 
                                 Divider()
                                     .background(Color.separator)
+                                    .padding(.horizontal)
                             }
                         }
                     }
@@ -117,6 +160,15 @@ struct ActivePolicyDetailView: View {
             }
             .background(Color.bgSurface)
             .ignoresSafeArea(.all, edges: .bottom)
+    }
+
+    var section: some View {
+        Text("Previous policies")
+            .font(.system(size: 16))
+            .fontWeight(.medium)
+            .foregroundColor(.textNormal)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
     }
 }
 

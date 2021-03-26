@@ -15,6 +15,7 @@ struct NavigationBarColor: ViewModifier {
         coloredAppearance.backgroundColor = background
         coloredAppearance.titleTextAttributes = [.foregroundColor: title]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: title]
+        coloredAppearance.shadowColor = .clear
 
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
