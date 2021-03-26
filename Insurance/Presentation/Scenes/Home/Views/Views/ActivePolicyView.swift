@@ -1,13 +1,13 @@
 //
-//  InactivePolicyView.swift
+//  ActivePolicyView.swift
 //  Insurance
 //
-//  Created by Raúl Pera Pairó on 20/3/21.
+//  Created by Raúl Pera Pairó on 19/3/21.
 //
 
 import SwiftUI
 
-struct InactivePolicyView: View {
+struct ActivePolicyView: View {
     // MARK: Properties
     var report: VehicleReport
 
@@ -18,7 +18,7 @@ struct InactivePolicyView: View {
             middleSection
             bottomSection
         }
-        .background(Color.white)
+        .background(Color.bgMain)
         .cornerRadius(20)
         .overlay(
             RoundedRectangle(cornerRadius: 20)

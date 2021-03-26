@@ -15,3 +15,5 @@ struct ExtendedPolicy: Identifiable {
     let startDate: String
     let endDate: String
 }
+
+extension ExtendedPolicy: Dateable { }
